@@ -1,0 +1,35 @@
+<table class="table table-responsive table-borderless">
+
+  <tbody>
+    <tr *ngFor="let reprository of reprositories.items | paginate: { id: 'foo',
+    itemsPerPage: 30,
+    currentPage: page,
+    
+    totalItems: 1000}" >
+      <td scope="col">
+    <tr><img [src]="reprository.owner.avatar_url" height="110px" width="110px"></tr>
+
+    </td>
+
+    <td scope="col">
+
+      <tr>
+        <td class="title" colspan="3">{{reprository.name}}</td>
+      </tr>
+
+      <tr>
+        <td colspan="3">{{reprository.description}}</td>
+      </tr>
+
+      <tr>
+        <td class="col nb">Stars: {{reprository.stargazers_count}}</td>
+        <td class="col nb">Issues: {{reprository.open_issues_count}}</td>
+        <td class="col">Submitted {{timeInterval(reprository.updated_at)}} days ago by
+          {{ownerName(reprository.full_name)}}</td>
+      </tr>
+    </td>
+    </tr>
+  </tbody>
+
+</table>
+<pagination-controls (pageChange)="page=$event;getdata($event)" id="foo"></pagination-controls>
