@@ -1,3 +1,20 @@
+# Description
+this project was created in order to display the most stared github reposes in the last 30days,
+the project get data from github apis
+the project display the reposes as a list each row contain 
+- owner username,avatar
+- repose name
+- repose description
+- number of stars for repose
+- number of issues for the repose
+the project enable scrolling result 30per page and paginate the other results.
+
+# libiraries
+this project use 
+- bootstrap5 to apply styles
+- HttpClient to fetch data from server(api)
+- ngxpagination to paginate the data
+
 # GithubRepose
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
